@@ -1,31 +1,37 @@
-<h2>Userinfo</h2>
+<h2>User info</h2>
+
 <%= image_tag user.get_profile_image(100,100) %><br>
 
 <table>
  <tbody>
   <tr>
   <th>name</th>
-  <th><%= link_to current_user.name %></th>
+  <th><%= user.name %></th>
   </tr>
 
   <tr>
   <th>introduction</th>
-  <th><%= link_to current_user.introduction</th>
+  <th><%= user.introduction %></th>
 
   <th colspan="3"></th>
   </tr>
- </tbody>
+  </tbody>
+</table>
 
  <% if user == current_user %>
- <P><%= link_to <i class="fa-solid fa-user-gear"></i>, edit_user_path(user) %></P>
+ <P><%= link_to edit_user_path(user) do %>
+      <i class="fa-solid fa-user-gear"></i></P>
+ <% end %>
  <% else %>
- <P><%= link_to <i class="fa-solid fa-user-gear"></i>, user_path(current_user.id) %></P>
+ <P><%= link_to user_path(current_user.id) do %>
+      <i class="fa-solid fa-user-gear"></i></P>
+ <% end %>
  <% end %>
 
 
 <h1>New book</h1>
 
-<%= form_with model:book, url: '/books', method: :post do |f| %>
+<%= form_with model: book, url: '/books', method: :post do |f| %>
 
 <h4>Title</h4>
 <%= f.text_field :title %>
