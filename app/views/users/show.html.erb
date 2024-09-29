@@ -1,4 +1,4 @@
-<%= render 'books/list', user: @users, book: @book %>
+<%= render 'books/list', user: @user, book: @book %>
 
 <h2>Books</h2>
 
@@ -12,6 +12,8 @@
  </thead>
 
  <tbody>
+
+    <% @books.each do |book| %>
    <tr>
      <td><%= image_tag @user.get_profile_image(100,100) %></td>
 
@@ -20,5 +22,6 @@
          <% end %></td>
      <td><%= book.body %></td>
      </tr>
+    <% end %>
   </tbody>
 </table>
