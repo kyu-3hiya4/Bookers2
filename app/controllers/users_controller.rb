@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash.now[:notice] ="Errors!!"
-      redirect_to user_path(@user.id)
+      render :edit
     end
   end
 

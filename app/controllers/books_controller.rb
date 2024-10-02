@@ -8,6 +8,8 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       flash.now[:notice] = "Errors!!"
+      @books = Book.all
+      @user = current_user
       render :index
     end
   end
@@ -35,7 +37,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       flash.now[:notice] = "Errors!!"
-      redirect_to book_path(@book.id)
+      render :edit
     end
   end
 
