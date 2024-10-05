@@ -1,9 +1,13 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-3">
+   <%= render 'list', user: @user, book: @hon %>
+  </div>
 
-<%= render 'list', user: @user, book: @hon %>
-
+<div class ="col-md-8 offset-md-1">
 <h2>Book detail</h2>
 
-<table>
+<table class="table">
  <tbody>
   <tr>
   <td><%= link_to user_path(@book.id) do %>
@@ -26,8 +30,8 @@
   </tr>
  </tbody>
  </table>
-
-
-
+</div>
+</div>
+</div>
 
 
