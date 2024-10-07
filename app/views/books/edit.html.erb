@@ -32,10 +32,12 @@
 
  </div>
 
+<% if @book.present? %>
  <span>
  <%= link_to "show", book_path(@book.id) %>
-</span>
-|
+ </span>
+<% end %>
+
 <a href = "/books">Back</a>
 
  <% end %>
