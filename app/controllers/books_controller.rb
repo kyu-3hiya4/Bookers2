@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       flash[:notice] = "You have created book successfully."
       redirect_to book_path(@book.id)
     else
-      flash.now[:notice] = "Errors!!"
+      flash.now[:notice] = "error!!"
       @books = Book.all
       @user = current_user
       render :index
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
       flash[:notice] = "You have updated book successfully."
       redirect_to book_path(@book.id)
     else
-      flash.now[:notice] = "Errors!!"
+      flash.now[:notice] = "error!!"
       render :edit
     end
   end
