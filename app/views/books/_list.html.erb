@@ -20,15 +20,9 @@
 </table>
 
 <div class="row">
- <% if user == current_user %>
    <%= link_to edit_user_path(user.id), class: "btn btn-md btn-block btn-outline-secondary" do %>
       <i class="fa-solid fa-user-gear"></i>
    <% end %>
-   <% else %>
-   <%= link_to edit_user_path(user.id),class: "btn btn-md btn-block btn-outline-secondary" do %>
-      <i class="fa-solid fa-user-gear"></i>
-   <% end %>
- <% end %>
 </div>
 
 
